@@ -1,0 +1,7 @@
+%nav.navbar.bg-body-tertiary
+  .container-fluid
+    = link_to 'sakuraレッスン', root_path, class: 'navbar-brand'
+    - if user_signed_in?
+      = button_to t('menus.sign_out'), destroy_user_session_path, class: 'float-end btn', method: :delete
+    - else
+      = link_to t('devise.sessions.new.sign_in'), user_session_path, class: 'float-end btn'
