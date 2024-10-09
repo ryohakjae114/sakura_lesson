@@ -31,6 +31,7 @@ group :development do
   gem 'haml_lint'
   # NOTE: rails haml:erb2hamlをするために必要だった
   gem 'html2haml'
+  gem 'letter_opener_web'
   gem 'sgcop', github: 'SonicGarden/sgcop'
   gem 'web-console'
 end
