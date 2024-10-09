@@ -7,3 +7,7 @@ ja:
   lessons:
     index:
       title: "レッスン一覧"
+  admins:
+    lessons:
+      new:
+        title: "レッスン登録"

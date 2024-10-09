@@ -2,7 +2,7 @@
 %html
   %head
     %meta{ content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type' }
-    %title SakuraLesson
+    %title= SakuraLesson
     %meta{ content: 'width=device-width,initial-scale=1', name: 'viewport' }
     = csrf_meta_tags
     = csp_meta_tag
@@ -11,11 +11,11 @@
   %body
     %nav.navbar.bg-body-tertiary
       .container-fluid
-        = link_to 'sakuraレッスン', root_path, class: 'navbar-brand'
-        - if user_signed_in?
-          = button_to t('menus.sign_out'), destroy_user_session_path, class: 'float-end btn', method: :delete
+        = link_to '管理者画面', root_path, class: 'navbar-brand'
+        - if admin_signed_in?
+          = button_to t('menus.sign_out'), destroy_admin_session_path, class: 'float-end btn', method: :delete
         - else
-          = link_to t('devise.sessions.new.sign_in'), user_session_path, class: 'float-end btn'
+          = link_to t('devise.sessions.new.sign_in'), admin_session_path, class: 'float-end btn'
     = render 'layouts/flash_message'
     .container
       = yield

@@ -2,6 +2,14 @@ ja:
   activerecord:
     models:
       user: "ユーザ"
+      admin: "管理者"
+      lesson: "レッスン"
     attributes:
       user:
         name: "名前"
+      lesson:
+        title: "レッスン名"
+        summary: "概要"
+        maximum_allowed: "定員"
+        instructor: "講師"
+        public: "公開"
