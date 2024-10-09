@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       user: "ユーザ"
+      admin: "管理者"
     attributes:
       user:
         name: "名前"
