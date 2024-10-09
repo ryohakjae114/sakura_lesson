@@ -3,7 +3,7 @@ ja:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
   menus:
-    profile: "ユーザ情報"
+    sign_out: "サインアウト"
   lessons:
     index:
       title: "レッスン一覧"
