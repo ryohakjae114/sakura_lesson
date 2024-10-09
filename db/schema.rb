@@ -53,6 +53,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_09_023144) do
     t.string "name", limit: 200, default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
