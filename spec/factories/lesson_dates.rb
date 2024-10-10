@@ -4,6 +4,6 @@ FactoryBot.define do
     start_time { '2024-10-10 12:08:39' }
     end_time { '2024-10-10 12:08:39' }
     capacity { 1 }
-    text { 'MyString' }
+    url { 'MyString' }
   end
 end
