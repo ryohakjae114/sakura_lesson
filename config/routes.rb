@@ -3,7 +3,9 @@ Rails.application.routes.draw do
     sessions: 'admins/sessions',
   }
   namespace :admins do
-    resources :lessons, only: %i[new create]
+    resources :lessons, only: %i[new create], module: :lessons do
+      resources :lesson_dates, only: %i[new create]
+    end
   end
   devise_for :users
   root 'lessons#index'
