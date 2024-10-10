@@ -17,3 +17,5 @@ ja:
         date: "日時"
         start_time: "開始時間"
         end_time: "終了時間"
+        capacity: "定員"
+        url: "リンク"
