@@ -54,7 +54,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_09_064739) do
   create_table "lessons", force: :cascade do |t|
     t.string "title", limit: 50, default: "", null: false
     t.text "summary", default: "", null: false
-    t.integer "maximum_allowed", default: 1, null: false
     t.string "instructor", limit: 200, default: "", null: false
     t.boolean "public", default: false, null: false
     t.datetime "created_at", null: false
