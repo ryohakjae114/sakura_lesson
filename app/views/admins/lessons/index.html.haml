@@ -1,5 +1,6 @@
 %h1= admin_title_text(t('.title'))
 
+= paginate @lessons, theme: 'bootstrap-5'
 %table.table.border
   %thead
     %tr
@@ -13,3 +14,4 @@
         %td= lesson.instructor
         %td
           %input.form-check-input{ type: 'checkbox', checked: lesson.public ? true : false, disabled: true }
+= paginate @lessons, theme: 'bootstrap-5'

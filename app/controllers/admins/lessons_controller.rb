@@ -1,6 +1,6 @@
 class Admins::LessonsController < Admins::ApplicationController
   def index
-    @lessons = Lesson.order(created_at: :desc)
+    @lessons = Lesson.order(created_at: :desc).page(params[:page]).per(100)
   end
 
   def new
