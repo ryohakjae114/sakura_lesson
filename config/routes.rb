@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     sessions: 'admins/sessions',
   }
   namespace :admins do
-    resources :lessons, only: %i[new create]
+    resources :lessons, only: %i[index new create]
   end
   devise_for :users
   root 'lessons#index'

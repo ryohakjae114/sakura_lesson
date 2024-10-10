@@ -1,4 +1,8 @@
 class Admins::LessonsController < Admins::ApplicationController
+  def index
+    @lessons = Lesson.order(created_at: :desc)
+  end
+
   def new
     @lesson = Lesson.new
   end

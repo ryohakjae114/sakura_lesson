@@ -1,0 +1,15 @@
+%h1= admin_title_text(t('.title'))
+
+%table.table.border
+  %thead
+    %tr
+      %th= Lesson.human_attribute_name(:title)
+      %th= Lesson.human_attribute_name(:instructor)
+      %th= Lesson.human_attribute_name(:public)
+  %tbody
+    - @lessons.each do |lesson|
+      %tr
+        %td= lesson.title
+        %td= lesson.instructor
+        %td
+          %input.form-check-input{ type: 'checkbox', checked: lesson.public ? true : false, disabled: true }
