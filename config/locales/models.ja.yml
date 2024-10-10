@@ -4,7 +4,7 @@ ja:
       user: "ユーザ"
       admin: "管理者"
       lesson: "レッスン"
-      lesson_dates: "レッスン日時"
+      lesson_dates: "レッスン開催日"
     attributes:
       user:
         name: "名前"

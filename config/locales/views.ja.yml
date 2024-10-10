@@ -16,6 +16,6 @@ ja:
         title: "レッスン登録"
       lesson_dates:
         index:
-          title: "レッスン日時一覧"
+          title: "レッスン開催日一覧"
         new:
-          title: "レッスン日時登録"
+          title: "レッスン開催日登録"
