@@ -1,0 +1,18 @@
+%h1= admin_title_text(t('.title'))
+
+= link_to t('admins.lessons.new.title'), new_admins_lesson_path, class: 'btn btn-primary my-4'
+= paginate @lessons, theme: 'bootstrap-5'
+%table.table.border
+  %thead
+    %tr
+      %th= Lesson.human_attribute_name(:title)
+      %th= Lesson.human_attribute_name(:instructor)
+      %th= Lesson.human_attribute_name(:public)
+  %tbody
+    - @lessons.each do |lesson|
+      %tr
+        %td= lesson.title
+        %td= lesson.instructor
+        %td
+          %input.form-check-input{ type: 'checkbox', checked: lesson.public ? true : false, disabled: true }
+= paginate @lessons, theme: 'bootstrap-5'

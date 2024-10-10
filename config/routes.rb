@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     sessions: 'admins/sessions',
   }
   namespace :admins do
+    root 'lessons#index'
     resources :lessons, only: %i[new create], module: :lessons do
       resources :lesson_dates, only: %i[new create]
     end
