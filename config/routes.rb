@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :admins do
     root 'lessons#index'
     resources :lessons, only: %i[new create], module: :lessons do
-      resources :lesson_dates, only: %i[new create]
+      resources :lesson_dates, only: %i[index new create]
     end
   end
   devise_for :users
