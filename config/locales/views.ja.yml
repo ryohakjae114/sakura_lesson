@@ -2,6 +2,7 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
+      time: "%H:%M"
   menus:
     sign_out: "サインアウト"
   lessons:
@@ -13,3 +14,6 @@ ja:
         title: "レッスン一覧"
       new:
         title: "レッスン登録"
+      lesson_dates:
+        index:
+          title: "レッスン日時一覧"

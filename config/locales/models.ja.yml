@@ -4,6 +4,7 @@ ja:
       user: "ユーザ"
       admin: "管理者"
       lesson: "レッスン"
+      lesson_dates: "レッスン日時"
     attributes:
       user:
         name: "名前"
@@ -12,3 +13,9 @@ ja:
         summary: "概要"
         instructor: "講師"
         public: "公開"
+      lesson_date:
+        date: "日時"
+        start_time: "開始時間"
+        end_time: "終了時間"
+        capacity: "定員"
+        url: "リンク"

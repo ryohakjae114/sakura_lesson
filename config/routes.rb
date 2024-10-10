@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   }
   namespace :admins do
     root 'lessons#index'
-    resources :lessons, only: %i[new create]
+    resources :lessons, only: %i[new create] do
+      resources :lesson_dates, only: %i[index new create], module: :lessons
+    end
   end
   devise_for :users
   root 'lessons#index'
