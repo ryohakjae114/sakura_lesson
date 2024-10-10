@@ -1,5 +1,6 @@
 %h1= admin_title_text(t('.title'))
 
+= link_to t('admins.lessons.new.title'), new_admins_lesson_path, class: 'btn btn-primary my-4'
 = paginate @lessons, theme: 'bootstrap-5'
 %table.table.border
   %thead
