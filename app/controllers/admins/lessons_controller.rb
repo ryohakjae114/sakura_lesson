@@ -1,4 +1,8 @@
 class Admins::LessonsController < Admins::ApplicationController
+  def index
+    @lessons = Lesson.order(created_at: :desc).page(params[:page]).per(100)
+  end
+
   def new
     @lesson = Lesson.new
   end
@@ -6,7 +10,7 @@ class Admins::LessonsController < Admins::ApplicationController
   def create
     @lesson = Lesson.new(lesson_params)
     if @lesson.save
-      redirect_to new_admins_lesson_path, notice: t('controller.created')
+      redirect_to admins_root_path, notice: t('controller.created')
     else
       render :new, status: :unprocessable_entity
     end
