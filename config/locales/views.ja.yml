@@ -17,3 +17,5 @@ ja:
       lesson_dates:
         index:
           title: "レッスン日時一覧"
+        new:
+          title: "レッスン日時登録"

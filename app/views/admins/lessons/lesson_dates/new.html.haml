@@ -1,2 +1,8 @@
-%h1 Admins::Lessons::LessonDates#new
-%p Find me in app/views/admins/lessons/lesson_dates/new.html.haml
+%h1= t('.title')
+= simple_form_for [:admins, @lesson, @lesson_date] do |f|
+  = f.input :date
+  = f.input :start_time
+  = f.input :end_time
+  = f.input :capacity
+  = f.input :url
+  = f.button :submit
