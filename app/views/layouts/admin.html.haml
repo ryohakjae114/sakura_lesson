@@ -13,7 +13,8 @@
       .container-fluid
         %div
           = link_to '管理者画面', admins_root_path, class: 'navbar-brand'
-          = link_to t('admins.lessons.index.title'), admins_root_path
+          = link_to t('admins.lessons.index.title'), admins_root_path, class: 'mx-2'
+          = link_to t('admins.lessons.new.title'), new_admins_lesson_path, class: 'mx-2'
         - if admin_signed_in?
           = button_to t('menus.sign_out'), destroy_admin_session_path, class: 'float-end btn', method: :delete
         - else
