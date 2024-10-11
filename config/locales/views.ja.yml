@@ -21,6 +21,10 @@ ja:
         title: "レッスン開催日一覧"
         reserve: "予約する"
         reserved: "予約済み"
+  users:
+    registrations:
+      edit:
+        title: "プロフィール編集"
   admins:
     lessons:
       index:
