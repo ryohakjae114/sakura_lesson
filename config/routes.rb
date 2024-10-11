@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
   }
   root 'lessons#index'
+  resources :lessons, only: %i[show]
   get 'up' => 'rails/health#show', as: :rails_health_check
 
   if Rails.env.development?

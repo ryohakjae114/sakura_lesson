@@ -6,5 +6,5 @@
     .card-body
       .card-title.fw-bold= lesson.title
       %p.card-text= lesson.summary
-      = link_to '詳細へ', '', class: 'btn btn-primary'
+      = link_to t('lessons.show.title'), lesson_path(lesson), class: 'btn btn-primary'
 = paginate @lessons, theme: 'bootstrap-5'

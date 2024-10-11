@@ -8,6 +8,9 @@ ja:
   lessons:
     index:
       title: "レッスン一覧"
+    show:
+      title: "レッスン詳細"
+      to_lesson_dates: "このレッスンの開催日時を確認する"
   admins:
     lessons:
       index:
