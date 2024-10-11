@@ -15,6 +15,7 @@ ja:
       index:
         title: "レッスン開催日一覧"
         reserve: "予約する"
+        reserved: "予約済み"
   admins:
     lessons:
       index:

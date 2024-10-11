@@ -16,5 +16,9 @@
         %td= l lesson_date.start_time, format: :time
         %td= l lesson_date.end_time, format: :time
         %td= lesson_date.capacity
-        %td= button_to t('.reserve'), lesson_lesson_date_reservations_path(lesson_date.lesson, lesson_date), class: 'btn btn-primary'
+        %td
+          - if current_user.reservations.exists?(lesson_date_id: lesson_date.id)
+            = t('.reserved')
+          - else
+            = button_to t('.reserve'), lesson_lesson_date_reservations_path(lesson_date.lesson, lesson_date), class: 'btn btn-primary'
 = paginate @lesson_dates, theme: 'bootstrap-5'
