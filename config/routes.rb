@@ -8,7 +8,9 @@ Rails.application.routes.draw do
       resources :lesson_dates, only: %i[index new create], module: :lessons
     end
   end
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+  }
   root 'lessons#index'
   get 'up' => 'rails/health#show', as: :rails_health_check
 
