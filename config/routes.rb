@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   }
   root 'lessons#index'
   resources :lessons, only: %i[show] do
-    resources :lesson_dates, only: %i[index], module: :lessons
+    resources :lesson_dates, only: %i[index], module: :lessons do
+      resources :reservations, only: %i[create], module: :lesson_dates
+    end
   end
   get 'up' => 'rails/health#show', as: :rails_health_check
 

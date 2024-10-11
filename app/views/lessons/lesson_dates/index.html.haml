@@ -8,6 +8,7 @@
       %th= LessonDate.human_attribute_name(:start_time)
       %th= LessonDate.human_attribute_name(:end_time)
       %th= LessonDate.human_attribute_name(:capacity)
+      %th
   %tbody
     - @lesson_dates.each do |lesson_date|
       %tr
@@ -15,4 +16,5 @@
         %td= l lesson_date.start_time, format: :time
         %td= l lesson_date.end_time, format: :time
         %td= lesson_date.capacity
+        %td= button_to t('.reserve'), lesson_lesson_date_reservations_path(lesson_date.lesson, lesson_date), class: 'btn btn-primary'
 = paginate @lesson_dates, theme: 'bootstrap-5'
