@@ -1,2 +1,7 @@
 %h1= t('.title')
-%p Find me in app/views/lessons/index.html.haml
+- @lessons.each do |lesson|
+  .card.mb-4
+    .card-body
+      .card-title.fw-bold= lesson.title
+      %p.card-text= lesson.summary
+      = link_to '詳細へ', '', class: 'btn btn-primary'
