@@ -1,1 +1,21 @@
 = title_dom(t('.title'))
+
+%h2.fs-5.mb-4 予約したレッスン一覧
+= paginate @reserved_lesson_dates, theme: 'bootstrap-5'
+%table.table.border.text-center
+  %thead
+    %tr
+      %th= Lesson.human_attribute_name(:title)
+      %th= LessonDate.human_attribute_name(:start_time)
+      %th= LessonDate.human_attribute_name(:end_time)
+      %th= Lesson.human_attribute_name(:instructor)
+      %th= LessonDate.human_attribute_name(:url)
+  %tbody
+    - @reserved_lesson_dates.each do |reserved_lesson_date|
+      %tr
+        %td= link_to reserved_lesson_date.lesson.title, lesson_path(reserved_lesson_date.lesson)
+        %td= l reserved_lesson_date.start_time, format: :time
+        %td= l reserved_lesson_date.end_time, format: :time
+        %td= reserved_lesson_date.lesson.instructor
+        %td= link_to reserved_lesson_date.url, reserved_lesson_date.url
+= paginate @reserved_lesson_dates, theme: 'bootstrap-5'
