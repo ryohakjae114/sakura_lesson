@@ -8,6 +8,8 @@ ja:
   my_pages:
     show:
       title: "マイページ"
+      cancel_reservation: "予約キャンセル"
+      cancel_confirm: "予約をキャンセルしますか？"
   lessons:
     index:
       title: "レッスン一覧"

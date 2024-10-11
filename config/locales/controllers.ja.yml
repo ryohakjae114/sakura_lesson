@@ -8,3 +8,4 @@ ja:
     lesson_dates:
       reservations:
         reserved: "予約しました。マイページからご確認ください。"
+        canceled: "予約をキャンセルしました。"

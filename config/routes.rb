@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resource :my_page, only: %i[show]
   resources :lessons, only: %i[show] do
     resources :lesson_dates, only: %i[index], module: :lessons do
-      resources :reservations, only: %i[create], module: :lesson_dates
+      resource :reservations, only: %i[create destroy], module: :lesson_dates
     end
   end
   get 'up' => 'rails/health#show', as: :rails_health_check

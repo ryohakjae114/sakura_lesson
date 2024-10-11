@@ -11,6 +11,7 @@
       %th= LessonDate.human_attribute_name(:end_time)
       %th= Lesson.human_attribute_name(:instructor)
       %th= LessonDate.human_attribute_name(:url)
+      %th
   %tbody
     - @reserved_lesson_dates.each do |reserved_lesson_date|
       %tr
@@ -20,4 +21,8 @@
         %td= l reserved_lesson_date.end_time, format: :time
         %td= reserved_lesson_date.lesson.instructor
         %td= link_to reserved_lesson_date.url, reserved_lesson_date.url
+        %td
+          = button_to t('.cancel_reservation'), lesson_lesson_date_reservations_path(reserved_lesson_date.lesson, reserved_lesson_date),
+                      method: :delete, data: { turbo_confirm: t('.cancel_confirm') },
+                      class: 'btn btn-outline-danger'
 = paginate @reserved_lesson_dates, theme: 'bootstrap-5'
