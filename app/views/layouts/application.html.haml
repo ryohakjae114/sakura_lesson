@@ -16,6 +16,7 @@
           = link_to t('lessons.index.title'), root_path, class: 'mx-2 btn'
           - if user_signed_in?
             = link_to t('my_pages.show.title'), my_page_path, class: 'mx-2 btn'
+            = link_to t('users.registrations.edit.title', resource: User.model_name.human), edit_user_registration_path, class: 'mx-2 btn'
         - if user_signed_in?
           = button_to t('menus.sign_out'), destroy_user_session_path, class: 'float-end btn', method: :delete
         - else
