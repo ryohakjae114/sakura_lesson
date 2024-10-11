@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Lessons::LessonDates::Reservations', type: :system do
   let!(:hakjae) { create(:user) }
-  let!(:lesson) { create(:lesson, published: true) }
+  let!(:lesson) { create(:lesson, published: true, title: 'そろばん') }
 
   context 'ログイン時' do
     before do
@@ -11,13 +11,17 @@ RSpec.describe 'Lessons::LessonDates::Reservations', type: :system do
     end
 
     it 'レッスン開催日に登録できること' do
-      create(:lesson_date, lesson:)
+      create(:lesson_date, lesson:, start_time: '15:00', end_time: '18:00')
       visit lesson_lesson_dates_path(lesson)
       expect(page).not_to have_content '予約済み'
       expect do
         click_on '予約する'
       end.to change(hakjae.reservations, :count).by(1)
       expect(page).to have_content '予約しました。マイページからご確認ください。'
+      click_on 'マイページ'
+      expect(page).to have_content 'そろばん'
+      expect(page).to have_content '15:00'
+      expect(page).to have_content '18:00'
     end
   end
 
