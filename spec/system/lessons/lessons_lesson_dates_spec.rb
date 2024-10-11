@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Lessons::LessonDates', type: :system do
-  let!(:hakjae) { create(:admin) }
   let!(:lesson) { create(:lesson, title: 'カヤック', instructor: '阿久津', published: true) }
 
   it 'レッスン開催日を一覧できること' do

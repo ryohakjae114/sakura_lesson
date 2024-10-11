@@ -8,6 +8,7 @@
       %th= LessonDate.human_attribute_name(:start_time)
       %th= LessonDate.human_attribute_name(:end_time)
       %th= LessonDate.human_attribute_name(:capacity)
+      %th
   %tbody
     - @lesson_dates.each do |lesson_date|
       %tr
@@ -15,4 +16,12 @@
         %td= l lesson_date.start_time, format: :time
         %td= l lesson_date.end_time, format: :time
         %td= lesson_date.capacity
+        %td
+          - if user_signed_in?
+            - if current_user.reservations.exists?(lesson_date_id: lesson_date.id)
+              = t('.reserved')
+            - else
+              = button_to t('.reserve'), lesson_lesson_date_reservations_path(lesson_date.lesson, lesson_date), class: 'btn btn-primary'
+          - else
+            = link_to t('.reserve'), user_session_path, class: 'btn btn-primary'
 = paginate @lesson_dates, theme: 'bootstrap-5'
