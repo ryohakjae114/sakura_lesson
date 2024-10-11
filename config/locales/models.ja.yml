@@ -12,7 +12,7 @@ ja:
         title: "レッスン名"
         summary: "概要"
         instructor: "講師"
-        public: "公開"
+        published: "公開"
       lesson_date:
         date: "日時"
         start_time: "開始時間"
