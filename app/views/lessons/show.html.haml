@@ -1,4 +1,4 @@
-%h1= t('.title')
+= title_dom(t('.title'))
 
 .fs-2= Lesson.human_attribute_name(:title)
 .fs-5.mb-5= @lesson.title
@@ -7,4 +7,4 @@
 .fs-2= Lesson.human_attribute_name(:instructor)
 .fs-5.mb-5= @lesson.instructor
 
-= link_to t('.to_lesson_dates'), '', class: 'btn btn-primary'
+= link_to t('.to_lesson_dates'), lesson_lesson_dates_path(@lesson), class: 'btn btn-primary'

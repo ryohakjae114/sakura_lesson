@@ -2,7 +2,7 @@ class LessonsController < ApplicationController
   before_action :set_lesson, only: %i[show]
 
   def index
-    @lessons = Lesson.where(public: true).order(:created_at).page(params[:page]).per(10)
+    @lessons = Lesson.published.order(:created_at).page(params[:page]).per(10)
   end
 
   def show
@@ -11,6 +11,6 @@ class LessonsController < ApplicationController
   private
 
   def set_lesson
-    @lesson = Lesson.where(public: true).find(params[:id])
+    @lesson = Lesson.published.find(params[:id])
   end
 end

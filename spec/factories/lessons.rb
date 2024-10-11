@@ -3,6 +3,6 @@ FactoryBot.define do
     title { '英語' }
     summary { '実用的な英語を学びたい人、ここに集え' }
     instructor { 'MyString' }
-    public { false }
+    published { false }
   end
 end

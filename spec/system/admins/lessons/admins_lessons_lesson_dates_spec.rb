@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Admins::Lessons::LessonDates', type: :system do
   let!(:hakjae) { create(:admin) }
-  let!(:lesson) { create(:lesson, title: 'カヤック', instructor: '阿久津') }
+  let!(:lesson) { create(:lesson, title: 'カヤック', instructor: '阿久津', published: true) }
 
   before do
     sign_in hakjae

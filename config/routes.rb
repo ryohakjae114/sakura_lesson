@@ -8,11 +8,14 @@ Rails.application.routes.draw do
       resources :lesson_dates, only: %i[index new create], module: :lessons
     end
   end
+
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
   root 'lessons#index'
-  resources :lessons, only: %i[show]
+  resources :lessons, only: %i[show] do
+    resources :lesson_dates, only: %i[index], module: :lessons
+  end
   get 'up' => 'rails/health#show', as: :rails_health_check
 
   if Rails.env.development?

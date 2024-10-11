@@ -19,6 +19,6 @@ class Admins::LessonsController < Admins::ApplicationController
   private
 
   def lesson_params
-    params.require(:lesson).permit(:title, :summary, :instructor, :public)
+    params.require(:lesson).permit(:title, :summary, :instructor, :published)
   end
 end

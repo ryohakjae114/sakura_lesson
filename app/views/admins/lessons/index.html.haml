@@ -1,4 +1,4 @@
-%h1= admin_title_text(t('.title'))
+= title_dom(t('.title'))
 
 = link_to t('admins.lessons.new.title'), new_admins_lesson_path, class: 'btn btn-primary my-4'
 = paginate @lessons, theme: 'bootstrap-5'
@@ -7,7 +7,7 @@
     %tr
       %th= Lesson.human_attribute_name(:title)
       %th= Lesson.human_attribute_name(:instructor)
-      %th= Lesson.human_attribute_name(:public)
+      %th= Lesson.human_attribute_name(:published)
       %th
   %tbody
     - @lessons.each do |lesson|
@@ -15,6 +15,6 @@
         %td= lesson.title
         %td= lesson.instructor
         %td
-          %input.form-check-input{ type: 'checkbox', checked: lesson.public ? true : false, disabled: true }
+          %input.form-check-input{ type: 'checkbox', checked: lesson.published ? true : false, disabled: true }
         %td= link_to t('admins.lessons.lesson_dates.index.title'), admins_lesson_lesson_dates_path(lesson), class: 'btn btn-outline-dark'
 = paginate @lessons, theme: 'bootstrap-5'
