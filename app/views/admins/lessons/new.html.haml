@@ -1,4 +1,4 @@
-%h1= admin_title_text(t('.title'))
+= title_dom(t('.title'))
 = simple_form_for [:admins, @lesson] do |f|
   = f.input :title
   = f.input :summary
