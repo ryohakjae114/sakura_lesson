@@ -1,0 +1,6 @@
+= title_dom(t('.title'))
+= simple_form_for [:admins, @user] do |f|
+  .w-50
+    = f.input :email, hint: '入力したメールアドレスに認証メールが送られます。'
+    = f.input :name
+    = f.button :submit
