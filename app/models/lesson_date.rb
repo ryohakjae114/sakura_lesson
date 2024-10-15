@@ -13,7 +13,7 @@ class LessonDate < ApplicationRecord
 
   def cannot_start_at_and_end_at_overlap
     overlapping_lesson_dates = lesson.lesson_dates.where(start_at: start_at...end_at)
-                                     .or(lesson.lesson_dates.where(end_at: start_at...end_at))
+                                     .or(lesson.lesson_dates.where(end_at: start_at + 1.minute...end_at))
                                      .or(lesson.lesson_dates.where(start_at: ..start_at,
                                                                    end_at: end_at..))
     overlapping_lesson_dates.delete(self)
