@@ -1,4 +1,4 @@
-%h1= t('devise.registrations.new.sign_up')
+= title_dom(t('devise.registrations.new.sign_up'))
 = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = f.input :email, required: true, autofocus: true
   = f.input :name, required: true
