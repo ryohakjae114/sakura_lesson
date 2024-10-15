@@ -35,6 +35,8 @@ ja:
         index:
           title: "レッスン開催日一覧"
           edit: "編集"
+          delete: "削除"
+          delete_confirm: "レッスン開催日を削除しますか？"
         new:
           title: "レッスン開催日登録"
         edit:

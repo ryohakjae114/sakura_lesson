@@ -1,6 +1,6 @@
 class Admins::Lessons::LessonDatesController < Admins::ApplicationController
   before_action :set_lesson, only: %i[index new create]
-  before_action :set_lesson_date, only: %i[edit update]
+  before_action :set_lesson_date, only: %i[edit update destroy]
 
   def index
     @lesson_dates = @lesson.lesson_dates.order(created_at: :desc).page(params[:page]).per(100)
@@ -28,6 +28,11 @@ class Admins::Lessons::LessonDatesController < Admins::ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @lesson_date.destroy!
+    redirect_to admins_lesson_lesson_dates_path(@lesson_date.lesson), notice: t('controller.destroyed'), status: :see_other
   end
 
   private

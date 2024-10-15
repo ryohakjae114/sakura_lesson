@@ -11,6 +11,7 @@
       %th= LessonDate.human_attribute_name(:capacity)
       %th= LessonDate.human_attribute_name(:url)
       %th
+      %th
   %tbody
     - @lesson_dates.each do |lesson_date|
       %tr
@@ -20,4 +21,8 @@
         %td= lesson_date.capacity
         %td= lesson_date.url
         %td= link_to t('.edit'), edit_admins_lesson_date_path(lesson_date), class: 'btn btn-outline-dark'
+        %td
+          = button_to t('.delete'), admins_lesson_date_path(lesson_date),
+                      class: 'btn btn-outline-danger',
+                      method: :delete, data: { turbo_confirm: t('.delete_confirm') }
 = paginate @lesson_dates, theme: 'bootstrap-5'
