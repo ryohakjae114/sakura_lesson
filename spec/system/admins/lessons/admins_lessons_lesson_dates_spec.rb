@@ -67,7 +67,9 @@ RSpec.describe 'Admins::Lessons::LessonDates', type: :system do
     create(:lesson_date, date: '2025-10-10', start_time: '12:00:00', end_time: '15:00:00', capacity: 50, url: 'https://example.com/example', lesson:)
     visit admins_lesson_lesson_dates_path(lesson)
     expect(page).to have_content 'https://example.com/example'
-    click_on '削除'
+    expect do
+      click_on '削除'
+    end.to change(lesson.lesson_dates, :count).by(-1)
     expect(page).not_to have_content 'https://example.com/example'
   end
 end
