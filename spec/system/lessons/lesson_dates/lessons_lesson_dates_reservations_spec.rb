@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Lessons::LessonDates::Reservations', type: :system do
   let!(:hakjae) { create(:user) }
   let!(:lesson) { create(:lesson, published: true, title: 'そろばん') }
-  let!(:lesson_date) { create(:lesson_date, lesson:, start_at: '15:00', end_time: '18:00') }
+  let!(:lesson_date) { create(:lesson_date, lesson:, start_at: '15:00', end_at: '18:00') }
 
   context 'ログイン時' do
     before do

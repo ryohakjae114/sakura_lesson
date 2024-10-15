@@ -6,7 +6,7 @@
     %tr
       %th= LessonDate.human_attribute_name(:date)
       %th= LessonDate.human_attribute_name(:start_at)
-      %th= LessonDate.human_attribute_name(:end_time)
+      %th= LessonDate.human_attribute_name(:end_at)
       %th= LessonDate.human_attribute_name(:capacity)
       %th
   %tbody
@@ -14,7 +14,7 @@
       %tr
         %td= lesson_date.date
         %td= l lesson_date.start_at, format: :time
-        %td= l lesson_date.end_time, format: :time
+        %td= l lesson_date.end_at, format: :time
         %td= lesson_date.capacity
         %td
           - if user_signed_in?

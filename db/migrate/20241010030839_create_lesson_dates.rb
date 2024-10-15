@@ -4,7 +4,7 @@ class CreateLessonDates < ActiveRecord::Migration[7.2]
       t.references :lesson, null: false, foreign_key: true
       t.date :date, null: false, default: ''
       t.time :start_time, null: false, default: ''
-      t.time :end_time, null: false, default: ''
+      t.time :end_at, null: false, default: ''
       t.integer :capacity, null: false, default: 1
       t.text :url, null: false, default: ''
 

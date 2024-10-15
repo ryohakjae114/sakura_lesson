@@ -9,7 +9,7 @@ RSpec.describe 'Admins::Lessons::LessonDates', type: :system do
   end
 
   it 'レッスン開催日を一覧できること' do
-    create(:lesson_date, date: '2025-10-10', start_at: '12:00:00', end_time: '15:00:00', capacity: 50, url: 'https://example.com/example', lesson:)
+    create(:lesson_date, date: '2025-10-10', start_at: '12:00:00', end_at: '15:00:00', capacity: 50, url: 'https://example.com/example', lesson:)
     visit admins_root_path
     within(".test_#{lesson.id}") do
       click_on 'レッスン開催日一覧'
@@ -30,8 +30,8 @@ RSpec.describe 'Admins::Lessons::LessonDates', type: :system do
     select tomorrow.day, from: 'lesson_date[date(3i)]'
     select '13', from: 'lesson_date[start_at(4i)]'
     select '00', from: 'lesson_date[start_at(5i)]'
-    select '15', from: 'lesson_date[end_time(4i)]'
-    select '00', from: 'lesson_date[end_time(5i)]'
+    select '15', from: 'lesson_date[end_at(4i)]'
+    select '00', from: 'lesson_date[end_at(5i)]'
     fill_in '定員', with: 50
     fill_in 'リンク', with: 'https://example.com/meeting_url'
     expect do
@@ -41,7 +41,7 @@ RSpec.describe 'Admins::Lessons::LessonDates', type: :system do
   end
 
   it 'レッスン開催日を編集できること' do
-    create(:lesson_date, date: '2025-10-10', start_at: '12:00:00', end_time: '15:00:00', capacity: 50, url: 'https://example.com/example', lesson:)
+    create(:lesson_date, date: '2025-10-10', start_at: '12:00:00', end_at: '15:00:00', capacity: 50, url: 'https://example.com/example', lesson:)
     visit admins_lesson_lesson_dates_path(lesson)
     click_on '編集'
     select '2024', from: 'lesson_date[date(1i)]'
@@ -49,8 +49,8 @@ RSpec.describe 'Admins::Lessons::LessonDates', type: :system do
     select '25', from: 'lesson_date[date(3i)]'
     select '13', from: 'lesson_date[start_at(4i)]'
     select '00', from: 'lesson_date[start_at(5i)]'
-    select '16', from: 'lesson_date[end_time(4i)]'
-    select '00', from: 'lesson_date[end_time(5i)]'
+    select '16', from: 'lesson_date[end_at(4i)]'
+    select '00', from: 'lesson_date[end_at(5i)]'
     fill_in '定員', with: 100
     fill_in 'リンク', with: 'https://example.com/meeting_url'
 
@@ -64,7 +64,7 @@ RSpec.describe 'Admins::Lessons::LessonDates', type: :system do
   end
 
   it 'レッスン開催日を削除できること' do
-    create(:lesson_date, date: '2025-10-10', start_at: '12:00:00', end_time: '15:00:00', capacity: 50, url: 'https://example.com/example', lesson:)
+    create(:lesson_date, date: '2025-10-10', start_at: '12:00:00', end_at: '15:00:00', capacity: 50, url: 'https://example.com/example', lesson:)
     visit admins_lesson_lesson_dates_path(lesson)
     expect(page).to have_content 'https://example.com/example'
     expect do
