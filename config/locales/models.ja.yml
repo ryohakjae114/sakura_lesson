@@ -25,4 +25,4 @@ ja:
         lesson_dates:
           must_greater_than_now: "現在の時刻よりも後の時間を入力してください"
           must_greater_than_start_at: "は開始時間より後の時間を入力してください"
-          cannot_start_time_and_end_at_overlap: "と終了時間が他の開催日の時刻と被っています"
+          cannot_start_at_and_end_at_overlap: "と終了時間が他の開催日の時刻と被っています"

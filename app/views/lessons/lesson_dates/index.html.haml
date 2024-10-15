@@ -5,7 +5,7 @@
   %thead
     %tr
       %th= LessonDate.human_attribute_name(:date)
-      %th= LessonDate.human_attribute_name(:start_time)
+      %th= LessonDate.human_attribute_name(:start_at)
       %th= LessonDate.human_attribute_name(:end_time)
       %th= LessonDate.human_attribute_name(:capacity)
       %th
@@ -13,7 +13,7 @@
     - @lesson_dates.each do |lesson_date|
       %tr
         %td= lesson_date.date
-        %td= l lesson_date.start_time, format: :time
+        %td= l lesson_date.start_at, format: :time
         %td= l lesson_date.end_time, format: :time
         %td= lesson_date.capacity
         %td
