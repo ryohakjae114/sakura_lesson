@@ -23,6 +23,18 @@ RSpec.describe 'Admins::Users', type: :system do
     end
   end
 
+  it 'ユーザの名前を編集できる' do
+    visit admins_users_path
+    within '.test_sunae' do
+      click_link nil, href: edit_admins_user_path(sunae)
+    end
+    expect(page).to have_content 'ユーザ編集'
+    fill_in '名前', with: 'sunao'
+    click_on '更新する'
+    expect(page).to have_content '更新しました'
+    expect(page).to have_field '名前', with: 'sunao'
+  end
+
   it 'ユーザを削除できる' do
     visit admins_users_path
     within '.test_sunae' do
