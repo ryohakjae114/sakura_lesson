@@ -26,6 +26,11 @@ ja:
       edit:
         title: "プロフィール編集"
   admins:
+    users:
+      index:
+        title: "ユーザ一覧"
+      user_confirmed: "メール認証済み"
+      user_unconfirmed: "メール認証未"
     lessons:
       index:
         title: "レッスン一覧"

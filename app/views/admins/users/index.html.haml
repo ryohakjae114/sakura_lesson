@@ -1,0 +1,22 @@
+= title_dom(t('.title'))
+
+= paginate @users, theme: 'bootstrap-5'
+%table.table.border
+  %thead
+    %tr
+      %th= User.human_attribute_name(:id)
+      %th= User.human_attribute_name(:email)
+      %th= User.human_attribute_name(:name)
+      %th= User.human_attribute_name(:created_at)
+      %th= User.human_attribute_name(:confirmed_at)
+      %th
+  %tbody
+    - @users.each do |user|
+      %tr{ class: "test_#{user.id}" }
+        %td= user.id
+        %td= user.email
+        %td= user.name
+        %td= l user.confirmed_at
+        %td= l user.created_at
+        %td= user_confirm_status_badge(user)
+= paginate @users, theme: 'bootstrap-5'
