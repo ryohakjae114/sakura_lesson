@@ -29,6 +29,8 @@ ja:
     users:
       index:
         title: "ユーザ一覧"
+        delete: "削除する"
+        delete_confirm: "ユーザを削除しますか？"
       user_confirmed: "メール認証済み"
       user_unconfirmed: "メール認証未"
     lessons:

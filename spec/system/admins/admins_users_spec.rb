@@ -22,4 +22,14 @@ RSpec.describe 'Admins::Users', type: :system do
       expect(page).to have_content 'メール認証済み'
     end
   end
+
+  it 'ユーザを削除できる' do
+    visit admins_users_path
+    within '.test_sunae' do
+      expect do
+        click_on '削除する'
+      end.to change(User, :count).by(-1)
+    end
+    expect(page).to have_content '削除しました'
+  end
 end
