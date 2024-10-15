@@ -60,8 +60,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_15_065027) do
     t.text "url", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "start_at"
-    t.datetime "end_at"
+    t.datetime "start_at", default: -> { "now()" }, null: false
+    t.datetime "end_at", default: -> { "now()" }, null: false
     t.index ["lesson_id", "date"], name: "index_lesson_dates_on_lesson_id_and_date", unique: true
     t.index ["lesson_id"], name: "index_lesson_dates_on_lesson_id"
   end
