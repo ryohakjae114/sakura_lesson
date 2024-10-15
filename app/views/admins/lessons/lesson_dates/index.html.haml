@@ -5,9 +5,8 @@
 %table.table.border
   %thead
     %tr
-      %th= LessonDate.human_attribute_name(:date)
-      %th= LessonDate.human_attribute_name(:start_time)
-      %th= LessonDate.human_attribute_name(:end_time)
+      %th= LessonDate.human_attribute_name(:start_at)
+      %th= LessonDate.human_attribute_name(:end_at)
       %th= LessonDate.human_attribute_name(:capacity)
       %th= LessonDate.human_attribute_name(:url)
       %th
@@ -15,9 +14,8 @@
   %tbody
     - @lesson_dates.each do |lesson_date|
       %tr
-        %td= lesson_date.date
-        %td= l lesson_date.start_time, format: :time
-        %td= l lesson_date.end_time, format: :time
+        %td= l lesson_date.start_at, format: :without_seconds
+        %td= l lesson_date.end_at, format: :without_seconds
         %td= lesson_date.capacity
         %td= lesson_date.url
         %td= link_to t('.edit'), edit_admins_lesson_date_path(lesson_date), class: 'btn btn-outline-dark'

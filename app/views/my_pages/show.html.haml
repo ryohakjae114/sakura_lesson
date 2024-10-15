@@ -6,9 +6,8 @@
   %thead
     %tr
       %th= Lesson.human_attribute_name(:title)
-      %th= LessonDate.human_attribute_name(:date)
-      %th= LessonDate.human_attribute_name(:start_time)
-      %th= LessonDate.human_attribute_name(:end_time)
+      %th= LessonDate.human_attribute_name(:start_at)
+      %th= LessonDate.human_attribute_name(:end_at)
       %th= Lesson.human_attribute_name(:instructor)
       %th= LessonDate.human_attribute_name(:url)
       %th
@@ -16,9 +15,8 @@
     - @reserved_lesson_dates.each do |reserved_lesson_date|
       %tr
         %td= link_to reserved_lesson_date.lesson.title, lesson_path(reserved_lesson_date.lesson)
-        %td= l reserved_lesson_date.date
-        %td= l reserved_lesson_date.start_time, format: :time
-        %td= l reserved_lesson_date.end_time, format: :time
+        %td= l reserved_lesson_date.start_at, format: :without_seconds
+        %td= l reserved_lesson_date.end_at, format: :without_seconds
         %td= reserved_lesson_date.lesson.instructor
         %td= link_to reserved_lesson_date.url, reserved_lesson_date.url
         %td

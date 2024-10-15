@@ -1,8 +1,7 @@
 = title_dom(t('.title'))
 = simple_form_for [:admins, @lesson, @lesson_date] do |f|
-  = f.input :date
-  = f.input :start_time
-  = f.input :end_time
+  = f.input :start_at
+  = f.input :end_at
   = f.input :capacity
   = f.input :url
   = f.button :submit

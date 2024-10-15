@@ -3,6 +3,7 @@ ja:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
       time: "%H:%M"
+      without_seconds: "%Y/%m/%d %H:%M"
   menus:
     sign_out: "サインアウト"
   my_pages:
