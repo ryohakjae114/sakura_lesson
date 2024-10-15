@@ -31,6 +31,8 @@ ja:
         title: "ユーザ一覧"
         delete: "削除する"
         delete_confirm: "ユーザを削除しますか？"
+      edit:
+        title: "ユーザ編集"
       user_confirmed: "メール認証済み"
       user_unconfirmed: "メール認証未"
     lessons:
