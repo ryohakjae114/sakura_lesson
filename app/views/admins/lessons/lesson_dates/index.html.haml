@@ -8,6 +8,7 @@
       %th= LessonDate.human_attribute_name(:start_at)
       %th= LessonDate.human_attribute_name(:end_at)
       %th= LessonDate.human_attribute_name(:capacity)
+      %th= LessonDate.human_attribute_name(:reservations_count)
       %th= LessonDate.human_attribute_name(:url)
       %th
       %th
@@ -17,6 +18,7 @@
         %td= l lesson_date.start_at, format: :without_seconds
         %td= l lesson_date.end_at, format: :without_seconds
         %td= lesson_date.capacity
+        %td= lesson_date.reservations_count
         %td= lesson_date.url
         %td= link_to t('.edit'), edit_admins_lesson_date_path(lesson_date), class: 'btn btn-outline-dark'
         %td

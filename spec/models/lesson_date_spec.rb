@@ -2,9 +2,11 @@ require 'rails_helper'
 
 RSpec.describe LessonDate, type: :model do
   let(:lesson) { create(:lesson) }
+  let(:hakjae) { create(:user) }
+  let(:songjae) { create(:user) }
 
   before do
-    create(:lesson_date, start_at: '2024-10-17-12:00:00', end_at: '2024-10-17-13:00:00', capacity: 50, lesson:)
+    create(:lesson_date, start_at: '2024-10-17-12:00:00', end_at: '2024-10-17-13:00:00', capacity: 1, lesson:)
   end
 
   it '現在の時間よりも前のレッスンは登録できない' do
@@ -30,5 +32,16 @@ RSpec.describe LessonDate, type: :model do
 
     lesson_date = build(:lesson_date, start_at: '2024-10-17-12:01:00', end_at: '2024-10-17-11:59:00', lesson:)
     expect(lesson_date).not_to be_valid
+  end
+
+  it '予約数が定員の数だけいると予約できない' do
+    lesson_date = build(:lesson_date, capacity: 1, start_at: '2024-10-17-11:00:00', end_at: '2024-10-17-12:00:00')
+    reservation = build(:reservation, user: hakjae, lesson_date:)
+    expect(reservation).to be_valid
+
+    reservation.save
+
+    reservation = build(:reservation, user: songjae, lesson_date:)
+    expect(reservation).not_to be_valid
   end
 end
