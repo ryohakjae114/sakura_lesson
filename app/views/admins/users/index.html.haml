@@ -10,6 +10,7 @@
       %th= User.human_attribute_name(:created_at)
       %th= User.human_attribute_name(:confirmed_at)
       %th
+      %th
   %tbody
     - @users.each do |user|
       %tr{ class: "test_#{user.name}" }
@@ -19,4 +20,7 @@
         %td= l user.confirmed_at if user.confirmed_at
         %td= l user.created_at
         %td= user_confirm_status_badge(user)
+        %td
+          = button_to t('.delete'), admins_user_path(user),
+                      method: :delete, data: { turbo_confirm: t('.delete_confirm') }, class: 'btn btn-outline-danger'
 = paginate @users, theme: 'bootstrap-5'
