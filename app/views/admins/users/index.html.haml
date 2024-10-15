@@ -12,11 +12,11 @@
       %th
   %tbody
     - @users.each do |user|
-      %tr{ class: "test_#{user.id}" }
+      %tr{ class: "test_#{user.name}" }
         %td= user.id
         %td= user.email
         %td= user.name
-        %td= l user.confirmed_at
+        %td= l user.confirmed_at if user.confirmed_at
         %td= l user.created_at
         %td= user_confirm_status_badge(user)
 = paginate @users, theme: 'bootstrap-5'
