@@ -19,4 +19,5 @@
         %td= l lesson_date.end_time, format: :time
         %td= lesson_date.capacity
         %td= lesson_date.url
+        %td= link_to t('.edit'), edit_admins_lesson_date_path(lesson_date), class: 'btn btn-outline-dark'
 = paginate @lesson_dates, theme: 'bootstrap-5'

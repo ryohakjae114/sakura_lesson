@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   }
   namespace :admins do
     root 'lessons#index'
-    resources :lessons, only: %i[new create] do
-      resources :lesson_dates, only: %i[index new create], module: :lessons
+    resources :lessons, only: %i[new create], shallow: true do
+      resources :lesson_dates, only: %i[index new create edit update], module: :lessons
     end
   end
 

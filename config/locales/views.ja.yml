@@ -34,5 +34,8 @@ ja:
       lesson_dates:
         index:
           title: "レッスン開催日一覧"
+          edit: "編集"
         new:
           title: "レッスン開催日登録"
+        edit:
+          title: "レッスン開催日編集"
