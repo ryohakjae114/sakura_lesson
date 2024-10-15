@@ -46,6 +46,6 @@ class Admins::Lessons::LessonDatesController < Admins::ApplicationController
   end
 
   def lesson_date_params
-    params.require(:lesson_date).permit(:date, :start_at, :end_at, :capacity, :url)
+    params.require(:lesson_date).permit(:start_at, :end_at, :capacity, :url)
   end
 end

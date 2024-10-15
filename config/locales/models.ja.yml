@@ -15,7 +15,6 @@ ja:
         instructor: "講師"
         published: "公開"
       lesson_date:
-        date: "日時"
         start_at: "開始時間"
         end_at: "終了時間"
         capacity: "定員"
