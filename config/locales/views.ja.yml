@@ -26,6 +26,12 @@ ja:
     survey_questions:
       index:
         title: "アンケート"
+        create: "回答する"
+      survey_answers:
+        new:
+          title: "アンケート回答"
+          create: "回答する"
+          to_survey_questions: "アンケート一覧に画面に戻る"
   users:
     registrations:
       edit:

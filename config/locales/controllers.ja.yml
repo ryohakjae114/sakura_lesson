@@ -9,3 +9,6 @@ ja:
       reservations:
         reserved: "予約しました。マイページからご確認ください。"
         canceled: "予約をキャンセルしました。"
+    survey_questions:
+      survey_answers:
+        created: "アンケートに回答しました"

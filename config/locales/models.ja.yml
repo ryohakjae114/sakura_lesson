@@ -6,6 +6,7 @@ ja:
       lesson: "レッスン"
       lesson_dates: "レッスン開催日"
       survey_questions: "アンケート質問"
+      survey_answers: "アンケート回答"
     attributes:
       user:
         id: "ID"
@@ -24,6 +25,8 @@ ja:
       survey_question:
         content: "質問内容"
         created_at: "作成日時"
+      survey_answer:
+        content: "回答内容"
     errors:
       models:
         lesson_dates:

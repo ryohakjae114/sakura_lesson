@@ -19,7 +19,9 @@ Rails.application.routes.draw do
   root 'lessons#index'
   resource :my_page, only: %i[show]
   resources :lessons, only: %i[show] do
-    resources :survey_questions, only: %i[index], module: :lessons, shallow: true
+    resources :survey_questions, only: %i[index], module: :lessons, shallow: true do
+      resources :survey_answers, only: %i[new create edit update], module: :survey_questions, shallow: true
+    end
     resources :lesson_dates, only: %i[index], module: :lessons do
       resource :reservations, only: %i[create destroy], module: :lesson_dates
     end

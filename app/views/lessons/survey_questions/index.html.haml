@@ -1,6 +1,6 @@
 = title_dom(t('.title'))
-%table.table.border
-  %tbody
-    - @survey_questions.each do |survey_question|
-      %tr
-        %td= survey_question.content
+- @survey_questions.each do |survey_question|
+  .card.mb-4
+    .card-body
+      .card-title.fw-bold= survey_question.content
+      .card-body= link_to t('.create'), new_survey_question_survey_answer_path(survey_question), class: 'btn btn-primary'
