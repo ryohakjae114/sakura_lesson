@@ -19,6 +19,7 @@ RSpec.describe 'Lessons::LessonDates::Reservations', type: :system do
       end.to change(hakjae.reservations, :count).by(1)
                                                 .and change(ActionMailer::Base.deliveries, :count).by(1)
       expect(page).to have_content '予約しました。マイページからご確認ください。'
+      expect(page).to have_content 'アンケート'
       click_on 'マイページ'
       expect(page).to have_content 'そろばん'
       expect(page).to have_content '2024/10/17 12:00'
