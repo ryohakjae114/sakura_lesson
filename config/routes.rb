@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :lesson_dates, only: %i[index new create edit update destroy], module: :lessons, shallow: true do
         resources :reserved_users, only: %i[index], module: :lesson_dates
       end
+      resources :survey_questions, only: %i[index new create destroy], module: :lessons
     end
   end
 
