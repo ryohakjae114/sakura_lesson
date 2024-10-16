@@ -60,3 +60,10 @@ ja:
         reserved_users:
           index:
             title: "予約したユーザ一覧"
+      survey_questions:
+        index:
+          title: "アンケートの質問一覧"
+          delete: "質問を削除"
+          delete_confirm: "質問を削除しますか？"
+        new:
+          title: "アンケートの質問作成"
