@@ -64,8 +64,11 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
+  config.include ActiveSupport::Testing::TimeHelpers
+
   # system specでは rack_test を使う
   config.before(:each) do |example|
+    travel_to('2024/10/16 10:00')
     if example.metadata[:type] == :system
       driven_by(:rack_test)
     end
