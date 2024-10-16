@@ -1,5 +1,6 @@
 class Lesson < ApplicationRecord
   has_many :lesson_dates, dependent: :destroy
+  has_many :survey_questions, dependent: :destroy
 
   validates :title, presence: true, length: { maximum: 50 }
   validates :summary, presence: true, length: { maximum: 500 }
