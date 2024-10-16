@@ -1,12 +1,6 @@
 class ReservationMailer < ApplicationMailer
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.reservation_mailer.reservation_notification.subject
-  #
-  def reservation_notification
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+  def reserve_notification
+    @reservation = params[:reservation]
+    mail to: Admin.pluck(:email), subject: default_i18n_subject
   end
 end

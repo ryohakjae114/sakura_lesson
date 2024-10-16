@@ -1,0 +1,5 @@
+ja:
+  reservation_mailer:
+    reserve_notification:
+      subject: "ユーザがレッスンを予約しました。"
+      body_html: "%{name}さんが%{start_at}から%{end_at}までの%{lesson_name}のレッスンを予約しました。"
