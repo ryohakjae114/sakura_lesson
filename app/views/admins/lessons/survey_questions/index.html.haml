@@ -1,2 +1,16 @@
-%h1 Admins::Lessons::SurveyQuestions#index
-%p Find me in app/views/admins/lessons/survey_questions/index.html.haml
+= title_dom(t('.title'))
+= link_to t('admins.lessons.survey_questions.new.title'), new_admins_lesson_survey_question_path, class: 'btn btn-primary my-4'
+%table.table.border
+  %thead
+    %tr
+      %th= SurveyQuestion.human_attribute_name(:content)
+      %th= SurveyQuestion.human_attribute_name(:created_at)
+      %th
+  %tbody
+    - @survey_questions.each do |survey_question|
+      %tr
+        %td= survey_question.content
+        %td= l survey_question.created_at, format: :without_seconds
+        %td
+          = button_to t('.delete'), admins_survey_question_path(survey_question),
+                      method: :delete, data: { turbo_confirm: t('.delete_confirm') }, class: 'btn btn-outline-danger'

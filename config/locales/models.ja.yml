@@ -5,6 +5,7 @@ ja:
       admin: "管理者"
       lesson: "レッスン"
       lesson_dates: "レッスン開催日"
+      survey_questions: "アンケート質問"
     attributes:
       user:
         id: "ID"
@@ -20,6 +21,9 @@ ja:
         capacity: "定員"
         reservations_count: "予約数"
         url: "リンク"
+      survey_question:
+        content: "質問内容"
+        created_at: "作成日時"
     errors:
       models:
         lesson_dates:
