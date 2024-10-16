@@ -1,0 +1,6 @@
+= title_dom(t('.title'))
+%table.table.border
+  %tbody
+    - @survey_questions.each do |survey_question|
+      %tr
+        %td= survey_question.content

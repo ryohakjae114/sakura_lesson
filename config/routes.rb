@@ -10,7 +10,6 @@ Rails.application.routes.draw do
         resources :reserved_users, only: %i[index], module: :lesson_dates
       end
       resources :survey_questions, only: %i[index new create destroy], module: :lessons
-      resources :survey_answers, only: %i[index new create edit update], module: :lessons
     end
   end
 
@@ -20,6 +19,7 @@ Rails.application.routes.draw do
   root 'lessons#index'
   resource :my_page, only: %i[show]
   resources :lessons, only: %i[show] do
+    resources :survey_questions, only: %i[index], module: :lessons, shallow: true
     resources :lesson_dates, only: %i[index], module: :lessons do
       resource :reservations, only: %i[create destroy], module: :lesson_dates
     end

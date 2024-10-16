@@ -23,6 +23,9 @@ ja:
         reserve: "予約する"
         cancel_reservation: "予約キャンセル"
         cancel_confirm: "予約をキャンセルしますか？"
+    survey_questions:
+      index:
+        title: "アンケート"
   users:
     registrations:
       edit:
