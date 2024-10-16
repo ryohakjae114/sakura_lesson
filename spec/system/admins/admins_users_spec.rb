@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe 'Admins::Users', type: :system do
   let!(:hakjae) { create(:admin) }
-
   let!(:sunae) { create(:user, name: 'sunae', email: 'sunae@example.com') }
 
   before do
