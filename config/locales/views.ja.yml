@@ -81,3 +81,6 @@ ja:
           delete_confirm: "質問を削除しますか？"
         new:
           title: "アンケートの質問作成"
+      survey_answered_users:
+        index:
+          title: "アンケート回答者一覧"
