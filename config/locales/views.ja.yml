@@ -57,3 +57,6 @@ ja:
           title: "レッスン開催日登録"
         edit:
           title: "レッスン開催日編集"
+        reserved_users:
+          index:
+            title: "予約したユーザ一覧"

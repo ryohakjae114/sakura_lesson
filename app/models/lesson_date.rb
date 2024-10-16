@@ -2,6 +2,7 @@ class LessonDate < ApplicationRecord
   belongs_to :lesson
 
   has_many :reservations, dependent: :destroy
+  has_many :reserved_users, through: :reservations, source: :user
 
   validates :start_at, presence: true,
                        comparison: { greater_than_or_equal_to: Time.zone.now, message: I18n.t('activerecord.errors.models.lesson_dates.must_greater_than_now') }
