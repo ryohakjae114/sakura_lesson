@@ -12,3 +12,4 @@ ja:
     survey_questions:
       survey_answers:
         created: "アンケートに回答しました"
+        updated: "アンケートの内容を修正しました"
