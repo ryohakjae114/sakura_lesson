@@ -1,5 +1,4 @@
 = title_dom(t('.title'))
-= link_to t('admins.lessons.survey_questions.index.title'), admins_lesson_survey_questions_path(@lesson_date.lesson), class: 'btn btn-dark mb-5'
 = simple_form_for [:admins, @lesson, @lesson_date] do |f|
   = f.input :start_at
   = f.input :end_at

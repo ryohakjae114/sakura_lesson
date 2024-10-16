@@ -1,0 +1,10 @@
+= title_dom(t('.title'))
+- @survey_questions.each do |survey_question|
+  .card.mb-4
+    .card-body
+      .card-title.fw-bold= survey_question.content
+      .card-body
+        - if current_user.survey_answers.find_by(survey_question:)
+          = link_to t('.update'), edit_survey_answer_path(current_user.survey_answers.find_by(survey_question:)), class: 'btn btn-primary'
+        - else
+          = link_to t('.create'), new_survey_question_survey_answer_path(survey_question), class: 'btn btn-primary'

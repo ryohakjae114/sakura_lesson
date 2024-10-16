@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_16_082258) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_16_095225) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -82,6 +82,17 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_16_082258) do
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
+  create_table "survey_answers", force: :cascade do |t|
+    t.bigint "survey_question_id", null: false
+    t.bigint "user_id", null: false
+    t.string "content", limit: 255, default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["survey_question_id", "user_id"], name: "index_survey_answers_on_survey_question_id_and_user_id", unique: true
+    t.index ["survey_question_id"], name: "index_survey_answers_on_survey_question_id"
+    t.index ["user_id"], name: "index_survey_answers_on_user_id"
+  end
+
   create_table "survey_questions", force: :cascade do |t|
     t.bigint "lesson_id", null: false
     t.string "content", limit: 255, default: "", null: false
@@ -110,5 +121,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_16_082258) do
   add_foreign_key "lesson_dates", "lessons"
   add_foreign_key "reservations", "lesson_dates"
   add_foreign_key "reservations", "users"
+  add_foreign_key "survey_answers", "survey_questions"
+  add_foreign_key "survey_answers", "users"
   add_foreign_key "survey_questions", "lessons"
 end

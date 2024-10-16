@@ -1,0 +1,7 @@
+= title_dom(t('.title'))
+
+%h2.mb-5.fs-3 #{SurveyQuestion.human_attribute_name(:content)}： #{@survey_answer.survey_question.content}
+= simple_form_for [@survey_question, @survey_answer] do |f|
+  = f.input :content
+  = f.button :submit, t('.update')
+= link_to t('.to_survey_questions'), lesson_survey_questions_path(@survey_answer.survey_question.lesson), class: 'btn btn-outline-dark mb-5 float-end'
