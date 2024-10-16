@@ -7,7 +7,7 @@ ja:
   lessons:
     lesson_dates:
       reservations:
-        reserved: "予約しました。マイページからご確認ください。"
+        reserved: "予約しました。マイページからご確認ください。アンケートのご協力をお願いします。"
         canceled: "予約をキャンセルしました。"
     survey_questions:
       survey_answers:
