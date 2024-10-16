@@ -26,6 +26,8 @@ class Lessons::SurveyQuestions::SurveyAnswersController < ApplicationController
     end
   end
 
+  private
+
   def set_survey_question
     @survey_question = SurveyQuestion.find(params[:survey_question_id])
   end
