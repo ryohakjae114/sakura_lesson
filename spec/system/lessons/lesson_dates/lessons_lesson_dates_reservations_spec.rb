@@ -13,7 +13,6 @@ RSpec.describe 'Lessons::LessonDates::Reservations', type: :system do
 
     it 'レッスン開催日に登録できること' do
       visit lesson_lesson_dates_path(lesson)
-      expect(page).not_to have_content '予約済み'
       expect do
         click_on '予約する'
       end.to change(hakjae.reservations, :count).by(1)
@@ -21,6 +20,7 @@ RSpec.describe 'Lessons::LessonDates::Reservations', type: :system do
       click_on 'マイページ'
       expect(page).to have_content 'そろばん'
       expect(page).to have_content '2024/10/17 12:00'
+      expect(page).not_to have_link '予約する'
     end
 
     it 'レッスン開催日の予約を削除できること' do
@@ -30,6 +30,12 @@ RSpec.describe 'Lessons::LessonDates::Reservations', type: :system do
         click_on '予約キャンセル'
       end.to change(hakjae.reservations, :count).by(-1)
       expect(page).to have_content '予約をキャンセルしました。'
+    end
+
+    it 'すでに開催が開始されたレッスン開催日は表示されないこと' do
+      lesson_date.update(start_at: '2024/10/15 10:00')
+      visit lesson_lesson_dates_path(lesson)
+      expect(page).not_to have_content '2024/10/15 10:00'
     end
   end
 

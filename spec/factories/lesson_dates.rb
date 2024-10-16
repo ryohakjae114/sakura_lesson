@@ -5,5 +5,9 @@ FactoryBot.define do
     capacity { 20 }
     url { 'https://example.com' }
     lesson
+
+    trait :skip_validation do
+      to_create { |instance| instance.save(validate: false) }
+    end
   end
 end
