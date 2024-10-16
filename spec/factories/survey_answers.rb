@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :survey_answer do
-    survery_question { nil }
+    survey_question { nil }
     user { nil }
-    content { "MyString" }
+    content { 'MyString' }
   end
 end

@@ -5,6 +5,7 @@ class User < ApplicationRecord
 
   has_many :reservations, dependent: :destroy
   has_many :reserved_lesson_dates, through: :reservations, source: :lesson_date
+  has_many :survey_answers, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 200 }
 end
