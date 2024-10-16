@@ -10,6 +10,7 @@ Rails.application.routes.draw do
         resources :reserved_users, only: %i[index], module: :lesson_dates
       end
       resources :survey_questions, only: %i[index new create destroy], module: :lessons
+      resources :survey_answers, only: %i[index new create edit update], module: :lessons
     end
   end
 
