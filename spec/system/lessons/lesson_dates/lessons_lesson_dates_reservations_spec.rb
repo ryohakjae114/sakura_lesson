@@ -12,10 +12,12 @@ RSpec.describe 'Lessons::LessonDates::Reservations', type: :system do
     end
 
     it 'レッスン開催日に登録できること' do
+      create(:admin)
       visit lesson_lesson_dates_path(lesson)
       expect do
         click_on '予約する'
       end.to change(hakjae.reservations, :count).by(1)
+                                                .and change(ActionMailer::Base.deliveries, :count).by(1)
       expect(page).to have_content '予約しました。マイページからご確認ください。'
       click_on 'マイページ'
       expect(page).to have_content 'そろばん'

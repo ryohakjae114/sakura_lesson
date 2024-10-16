@@ -1,6 +1,7 @@
 class Lessons::LessonDates::ReservationsController < ApplicationController
   def create
-    current_user.reservations.create!(lesson_date_id: params[:lesson_date_id])
+    reservation = current_user.reservations.create!(lesson_date_id: params[:lesson_date_id])
+    ReservationMailer.with(reservation:).reserve_notification.deliver_now
     redirect_back(fallback_location: root_path, notice: t('.reserved'))
   end
 
