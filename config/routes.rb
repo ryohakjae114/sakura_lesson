@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     root 'lessons#index'
     resources :users, only: %i[index edit update destroy]
     resources :lessons, only: %i[new create edit update destroy], shallow: true do
-      resources :lesson_dates, only: %i[index new create edit update destroy], module: :lessons
+      resources :lesson_dates, only: %i[index new create edit update destroy], module: :lessons, shallow: true do
+        resources :reserved_users, only: %i[index], module: :lesson_dates
+      end
     end
   end
 

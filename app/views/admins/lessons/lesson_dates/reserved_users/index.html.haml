@@ -1,0 +1,18 @@
+= title_dom(t('.title'))
+
+= paginate @reserved_users, theme: 'bootstrap-5'
+%table.table.border
+  %thead
+    %tr
+      %th= User.human_attribute_name(:id)
+      %th= User.human_attribute_name(:email)
+      %th= User.human_attribute_name(:name)
+      %th
+  %tbody
+    - @reserved_users.each do |reserved_user|
+      %tr{ class: "test_#{reserved_user.name}" }
+        %td= link_to reserved_user.id, edit_admins_user_path(reserved_user)
+        %td= reserved_user.email
+        %td= reserved_user.name
+        %td= user_confirm_status_badge(reserved_user)
+= paginate @reserved_users, theme: 'bootstrap-5'
