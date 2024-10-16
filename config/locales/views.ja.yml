@@ -21,7 +21,8 @@ ja:
       index:
         title: "レッスン開催日一覧"
         reserve: "予約する"
-        reserved: "予約済み"
+        cancel_reservation: "予約キャンセル"
+        cancel_confirm: "予約をキャンセルしますか？"
   users:
     registrations:
       edit:
