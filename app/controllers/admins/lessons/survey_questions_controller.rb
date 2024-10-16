@@ -1,4 +1,4 @@
-class Admins::Lessons::SurveyQuestionsController < ApplicationController
+class Admins::Lessons::SurveyQuestionsController < Admins::ApplicationController
   before_action :set_lesson, only: %i[index new create]
   before_action :set_survey_question, only: :destroy
 
