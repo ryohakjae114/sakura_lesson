@@ -5,11 +5,12 @@ Rails.application.routes.draw do
   namespace :admins do
     root 'lessons#index'
     resources :users, only: %i[index edit update destroy]
-    resources :lessons, only: %i[new create edit update destroy], shallow: true do
+    resources :lessons, only: %i[new create edit update destroy] do
       resources :lesson_dates, only: %i[index new create edit update destroy], module: :lessons, shallow: true do
         resources :reserved_users, only: %i[index], module: :lesson_dates
       end
-      resources :survey_questions, only: %i[index new create destroy], module: :lessons
+      resources :survey_questions, only: %i[index new create destroy], module: :lessons, shallow: true
+      resources :survey_answered_users, only: %i[index], module: :lessons
     end
   end
 
