@@ -8,7 +8,6 @@ RSpec.describe 'Admins::Lessons::Users::SurveyAnswers', type: :system do
   let!(:sunae) { create(:user, name: 'sunae', email: 'sunae@example.com') }
 
   before do
-    sunae.confirm
     sign_in hakjae
   end
 

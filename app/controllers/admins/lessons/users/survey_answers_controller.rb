@@ -1,4 +1,4 @@
-class Admins::Lessons::Users::SurveyAnswersController < ApplicationController
+class Admins::Lessons::Users::SurveyAnswersController < Admins::ApplicationController
   before_action :set_user, :set_lesson
 
   def index
