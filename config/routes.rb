@@ -10,7 +10,9 @@ Rails.application.routes.draw do
         resources :reserved_users, only: %i[index], module: :lesson_dates
       end
       resources :survey_questions, only: %i[index new create destroy], module: :lessons, shallow: true
-      resources :survey_answered_users, only: %i[index], module: :lessons
+      resources :survey_answered_users, only: %i[index], module: :lessons do
+        resources :survey_answers, only: %i[index], module: :users
+      end
     end
   end
 

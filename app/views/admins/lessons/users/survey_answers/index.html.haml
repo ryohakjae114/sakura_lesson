@@ -1,0 +1,13 @@
+= title_dom(t('.title', name: @user.name))
+
+= link_to t('.to_answered_users'), admins_lesson_survey_answered_users_path(@lesson, @user), class: 'btn btn-dark mb-5'
+%table.table.border
+  %thead
+    %tr
+      %th.border= SurveyQuestion.human_attribute_name(:content)
+      %th.border= SurveyAnswer.human_attribute_name(:content)
+  %tbody
+    - @survey_answers.each do |survey_answer|
+      %tr
+        %td.border= survey_answer.survey_question.content
+        %td.border= survey_answer.content
