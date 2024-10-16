@@ -8,3 +8,4 @@
           = link_to t('.update'), edit_survey_answer_path(current_user.survey_answers.find_by(survey_question:)), class: 'btn btn-primary'
         - else
           = link_to t('.create'), new_survey_question_survey_answer_path(survey_question), class: 'btn btn-primary'
+= link_to t('.finish'), root_path, class: 'btn btn-primary'

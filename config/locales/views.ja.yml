@@ -28,6 +28,7 @@ ja:
         title: "アンケート"
         create: "回答する"
         update: "回答を編集する"
+        finish: "アンケートの終了"
       survey_answers:
         new:
           title: "アンケート回答"
