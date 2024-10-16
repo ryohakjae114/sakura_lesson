@@ -1,16 +1,19 @@
 = title_dom(t('.title'))
 
 = paginate @survey_answered_users, theme: 'bootstrap-5'
+= link_to t('.to_lessons'), admins_root_path, class: 'btn btn-outline-dark mb-5'
 %table.table.border
   %thead
     %tr
       %th= User.human_attribute_name(:id)
       %th= User.human_attribute_name(:email)
       %th= User.human_attribute_name(:name)
+      %th
   %tbody
     - @survey_answered_users.each do |survey_answered_user|
       %tr{ class: "test_#{survey_answered_user.name}" }
         %td= link_to survey_answered_user.id, edit_admins_user_path(survey_answered_user)
         %td= survey_answered_user.email
         %td= survey_answered_user.name
+        %td= link_to t('.to_survey_answers'), admins_lesson_survey_answered_user_survey_answers_path(@lesson, survey_answered_user), class: 'btn btn-primary'
 = paginate @survey_answered_users, theme: 'bootstrap-5'

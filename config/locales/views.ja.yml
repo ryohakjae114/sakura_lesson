@@ -84,3 +84,10 @@ ja:
       survey_answered_users:
         index:
           title: "アンケート回答者一覧"
+          to_survey_answers: "アンケートの回答"
+          to_lessons: "レッスン一覧へ戻る"
+      users:
+        survey_answers:
+          index:
+            title: "%{name}のアンケート回答"
+            to_answered_users: "アンケート回答者一覧画面に戻る"
