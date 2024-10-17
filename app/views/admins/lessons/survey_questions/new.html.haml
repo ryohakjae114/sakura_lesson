@@ -1,4 +1,6 @@
 = title_dom(t('.title'))
+
+= link_to t('.to_survey_questions'), admins_lesson_survey_questions_path(@lesson), class: 'btn btn-dark mb-5'
 = simple_form_for [:admins, @lesson, @survey_question] do |f|
   = f.input :content
   = f.button :submit

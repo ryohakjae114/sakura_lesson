@@ -1,5 +1,6 @@
 = title_dom(t('.title'))
 
+= link_to t('.to_lessons'), root_path, class: 'btn btn-outline-dark mb-5'
 .fs-2= Lesson.human_attribute_name(:title)
 .fs-5.mb-5= @lesson.title
 .fs-2= Lesson.human_attribute_name(:summary)

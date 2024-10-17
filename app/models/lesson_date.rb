@@ -16,7 +16,7 @@ class LessonDate < ApplicationRecord
     overlapping_lesson_dates = lesson.lesson_dates.where(start_at: start_at...end_at)
                                      .or(lesson.lesson_dates.where(end_at: start_at + 1.minute...end_at))
                                      .or(lesson.lesson_dates.where(start_at: ..start_at, end_at: end_at..))
-                                     .merge(lesson.lesson_dates.where.not(id: self.id))
+                                     .excluding(self)
     if overlapping_lesson_dates.present?
       errors.add(:start_at, I18n.t('activerecord.errors.models.lesson_dates.cannot_start_at_and_end_at_overlap'))
     end

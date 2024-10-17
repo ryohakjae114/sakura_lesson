@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_16_095225) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_17_030119) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,16 +57,16 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_16_095225) do
     t.text "url", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "start_at", default: -> { "now()" }, null: false
-    t.datetime "end_at", default: -> { "now()" }, null: false
+    t.datetime "start_at"
+    t.datetime "end_at"
     t.integer "reservations_count", default: 0, null: false
     t.index ["lesson_id"], name: "index_lesson_dates_on_lesson_id"
   end
 
   create_table "lessons", force: :cascade do |t|
-    t.string "title", limit: 50, default: "", null: false
+    t.string "title", default: "", null: false
     t.text "summary", default: "", null: false
-    t.string "instructor", limit: 200, default: "", null: false
+    t.string "instructor", default: "", null: false
     t.boolean "published", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -79,23 +79,21 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_16_095225) do
     t.datetime "updated_at", null: false
     t.index ["lesson_date_id"], name: "index_reservations_on_lesson_date_id"
     t.index ["user_id", "lesson_date_id"], name: "index_reservations_on_user_id_and_lesson_date_id", unique: true
-    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "survey_answers", force: :cascade do |t|
     t.bigint "survey_question_id", null: false
     t.bigint "user_id", null: false
-    t.string "content", limit: 255, default: "", null: false
+    t.string "content", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["survey_question_id", "user_id"], name: "index_survey_answers_on_survey_question_id_and_user_id", unique: true
     t.index ["survey_question_id"], name: "index_survey_answers_on_survey_question_id"
-    t.index ["user_id"], name: "index_survey_answers_on_user_id"
   end
 
   create_table "survey_questions", force: :cascade do |t|
     t.bigint "lesson_id", null: false
-    t.string "content", limit: 255, default: "", null: false
+    t.string "content", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["lesson_id"], name: "index_survey_questions_on_lesson_id"
@@ -109,7 +107,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_16_095225) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
-    t.string "name", limit: 200, default: "", null: false
+    t.string "name", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

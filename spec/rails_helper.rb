@@ -68,7 +68,6 @@ RSpec.configure do |config|
 
   # system specでは rack_test を使う
   config.before(:each) do |example|
-    travel_to('2024/10/16 10:00')
     if example.metadata[:type] == :system
       driven_by(:rack_test)
     end

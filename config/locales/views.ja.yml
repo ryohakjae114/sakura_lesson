@@ -17,6 +17,7 @@ ja:
     show:
       title: "レッスン詳細"
       to_lesson_dates: "このレッスンの開催日時を確認する"
+      to_lessons: "レッスン一覧に戻る"
     lesson_dates:
       index:
         title: "レッスン開催日一覧"
@@ -58,10 +59,12 @@ ja:
         edit: "編集"
       new:
         title: "レッスン登録"
+        to_lessons: "レッスン一覧に戻る"
       edit:
         title: "レッスン編集"
         delete: "削除する"
         delete_confirm: "レッスンを削除しますか？"
+        to_lessons: "レッスン一覧に戻る"
       lesson_dates:
         index:
           title: "レッスン開催日一覧"
@@ -80,8 +83,10 @@ ja:
           title: "アンケートの質問一覧"
           delete: "質問を削除"
           delete_confirm: "質問を削除しますか？"
+          edit_lesson: "%{title}の編集に戻る"
         new:
           title: "アンケートの質問作成"
+          to_survey_questions: "アンケート一覧に戻る"
       survey_answered_users:
         index:
           title: "アンケート回答者一覧"

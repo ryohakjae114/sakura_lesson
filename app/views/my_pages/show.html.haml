@@ -1,7 +1,7 @@
 = title_dom(t('.title'))
 
 %h2.fs-5.mb-4 予約したレッスン一覧
-= paginate @reserved_lesson_dates, theme: 'bootstrap-5'
+= paginate @reservations, theme: 'bootstrap-5'
 %table.table.border.text-center
   %thead
     %tr
@@ -12,15 +12,15 @@
       %th= LessonDate.human_attribute_name(:url)
       %th
   %tbody
-    - @reserved_lesson_dates.each do |reserved_lesson_date|
+    - @reservations.each do |reservation|
       %tr
-        %td= link_to reserved_lesson_date.lesson.title, lesson_path(reserved_lesson_date.lesson)
-        %td= l reserved_lesson_date.start_at, format: :without_seconds
-        %td= l reserved_lesson_date.end_at, format: :without_seconds
-        %td= reserved_lesson_date.lesson.instructor
-        %td= link_to reserved_lesson_date.url, reserved_lesson_date.url
+        %td= link_to reservation.lesson_date.lesson.title, lesson_path(reservation.lesson_date.lesson)
+        %td= l reservation.lesson_date.start_at, format: :without_seconds
+        %td= l reservation.lesson_date.end_at, format: :without_seconds
+        %td= reservation.lesson_date.lesson.instructor
+        %td= link_to reservation.lesson_date.url, reservation.lesson_date.url
         %td
-          = button_to t('.cancel_reservation'), lesson_lesson_date_reservations_path(reserved_lesson_date.lesson, reserved_lesson_date),
+          = button_to t('.cancel_reservation'), reservation_path(reservation),
                       method: :delete, data: { turbo_confirm: t('.cancel_confirm') },
                       class: 'btn btn-outline-danger'
-= paginate @reserved_lesson_dates, theme: 'bootstrap-5'
+= paginate @reservations, theme: 'bootstrap-5'

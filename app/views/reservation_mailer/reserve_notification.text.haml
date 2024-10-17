@@ -1,2 +1,2 @@
 = t('reservation_mailer.reserve_notification.subject')
-= t('.body_html', name: @reservation.user.name, start_at: l(@reservation.lesson_date.start_at), format: :without_seconds, end_at: l(@reservation.lesson_date.end_at, format: :without_seconds), lesson_name: @reservation.lesson_date.lesson.title)
+= t('.body_html', name: @reservation.user.name, start_at: l(@reservation.lesson_date.start_at), format: :without_seconds, end_at: l(@reservation.lesson_date.end_at, format: :without_seconds), lesson_name: @reservation.lesson.title)

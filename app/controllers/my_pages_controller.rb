@@ -1,5 +1,5 @@
 class MyPagesController < ApplicationController
   def show
-    @reserved_lesson_dates = current_user.reserved_lesson_dates.order(start_at: :desc).page(params[:page]).per(10).includes(:lesson)
+    @reservations = current_user.reservations.includes(lesson_date: :lesson).order('lesson_dates.start_at asc').page(params[:page]).per(10)
   end
 end
