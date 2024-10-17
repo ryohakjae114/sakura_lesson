@@ -1,5 +1,6 @@
 = title_dom(t('.title'))
-= link_to t('admins.lessons.survey_questions.new.title'), new_admins_lesson_survey_question_path, class: 'btn btn-primary my-4'
+
+= link_to t('.edit_lesson', title: @lesson.title), edit_admins_lesson_path(@lesson), class: 'btn btn-dark mb-5'
 %table.table.border
   %thead
     %tr
@@ -14,3 +15,4 @@
         %td
           = button_to t('.delete'), admins_survey_question_path(survey_question),
                       method: :delete, data: { turbo_confirm: t('.delete_confirm') }, class: 'btn btn-outline-danger'
+= link_to t('admins.lessons.survey_questions.new.title'), new_admins_lesson_survey_question_path, class: 'btn btn-primary'

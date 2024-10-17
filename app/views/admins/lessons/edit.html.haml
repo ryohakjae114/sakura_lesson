@@ -1,5 +1,6 @@
 = title_dom(t('.title'))
-= link_to t('admins.lessons.survey_questions.index.title'), admins_lesson_survey_questions_path(@lesson), class: 'btn btn-dark mb-5'
+
+= link_to t('.to_lessons'), admins_root_path, class: 'btn btn-dark mb-5'
 = simple_form_for [:admins, @lesson] do |f|
   = f.input :title
   = f.input :summary
@@ -10,3 +11,4 @@
 = button_to t('.delete'), admins_lesson_path(@lesson),
             class: 'btn btn-danger mt-5',
             method: :delete, data: { turbo_confirm: t('.delete_confirm') }
+= link_to t('admins.lessons.survey_questions.index.title'), admins_lesson_survey_questions_path(@lesson), class: 'btn btn-outline-dark mt-5'

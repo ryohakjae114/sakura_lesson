@@ -18,7 +18,7 @@ class Admins::UsersController < Admins::ApplicationController
 
   def destroy
     @user.destroy!
-    redirect_to admins_root_path, notice: t('controller.destroyed'), status: :see_other
+    redirect_to admins_users_path, notice: t('controller.destroyed'), status: :see_other
   end
 
   private
