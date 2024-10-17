@@ -25,8 +25,8 @@ Rails.application.routes.draw do
     resources :survey_questions, only: %i[index], module: :lessons, shallow: true do
       resources :survey_answers, only: %i[new create edit update], module: :survey_questions, shallow: true
     end
-    resources :lesson_dates, only: %i[index], module: :lessons do
-      resource :reservations, only: %i[create destroy], module: :lesson_dates
+    resources :lesson_dates, only: %i[index], module: :lessons, shallow: true do
+      resources :reservations, only: %i[create destroy], module: :lesson_dates
     end
   end
   get 'up' => 'rails/health#show', as: :rails_health_check

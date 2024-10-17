@@ -19,11 +19,11 @@
         %td
           - if user_signed_in?
             - if current_user.reservations.exists?(lesson_date_id: lesson_date.id)
-              = button_to t('.cancel_reservation'), lesson_lesson_date_reservations_path(lesson_date.lesson, lesson_date),
+              = button_to t('.cancel_reservation'), reservation_path(current_user.reservations.find_by(lesson_date:)),
                           method: :delete, data: { turbo_confirm: t('.cancel_confirm') },
                           class: 'btn btn-outline-danger'
             - else
-              = button_to t('.reserve'), lesson_lesson_date_reservations_path(lesson_date.lesson, lesson_date),
+              = button_to t('.reserve'), lesson_date_reservations_path(lesson_date),
                           class: "btn btn-primary #{lesson_date.reservations_count == lesson_date.capacity ? 'disabled' : ''}"
           - else
             = link_to t('.reserve'), user_session_path, class: 'btn btn-primary'
