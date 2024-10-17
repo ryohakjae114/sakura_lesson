@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_17_024104) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_17_030119) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -79,7 +79,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_17_024104) do
     t.datetime "updated_at", null: false
     t.index ["lesson_date_id"], name: "index_reservations_on_lesson_date_id"
     t.index ["user_id", "lesson_date_id"], name: "index_reservations_on_user_id_and_lesson_date_id", unique: true
-    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "survey_answers", force: :cascade do |t|
@@ -90,7 +89,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_17_024104) do
     t.datetime "updated_at", null: false
     t.index ["survey_question_id", "user_id"], name: "index_survey_answers_on_survey_question_id_and_user_id", unique: true
     t.index ["survey_question_id"], name: "index_survey_answers_on_survey_question_id"
-    t.index ["user_id"], name: "index_survey_answers_on_user_id"
   end
 
   create_table "survey_questions", force: :cascade do |t|
