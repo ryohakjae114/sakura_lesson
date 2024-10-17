@@ -58,6 +58,7 @@ ja:
         edit: "編集"
       new:
         title: "レッスン登録"
+        to_lessons: "レッスン一覧に戻る"
       edit:
         title: "レッスン編集"
         delete: "削除する"
