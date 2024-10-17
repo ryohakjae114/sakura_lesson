@@ -1,4 +1,5 @@
 = title_dom(t('devise.confirmations.new.resend_confirmation_instructions'))
+
 = simple_form_for(resource, as: resource_name, url: user_confirmation_path) do |f|
   = f.input :email, required: true, autofocus: true
   = f.button :submit, t('devise.confirmations.new.resend_confirmation_instructions')
