@@ -29,9 +29,10 @@ Rails.application.routes.draw do
       resources :reservations, only: %i[create destroy], module: :lesson_dates
     end
   end
-  get 'up' => 'rails/health#show', as: :rails_health_check
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: '/letter_opener'
   end
+
+  get 'up' => 'rails/health#show', as: :rails_health_check
 end

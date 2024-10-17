@@ -3,7 +3,7 @@ class Admins::Lessons::SurveyAnsweredUsersController < Admins::ApplicationContro
 
   def index
     survey_answers = SurveyAnswer.where(survey_question_id: @lesson.survey_question_ids)
-    @survey_answered_users = User.includes(:survey_answers)
+    @survey_answered_users = User.includes(survey_answers: :survey_question)
                                  .where(id: survey_answers.pluck(:user_id))
                                  .order('survey_answers.created_at desc')
                                  .page(params[:page]).per(100)
