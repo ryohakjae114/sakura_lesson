@@ -9,13 +9,13 @@ RSpec.describe 'Admins::Lessons::LessonDates', type: :system do
   end
 
   it 'レッスン開催日を一覧できること' do
-    create(:lesson_date, start_at: '2024-10-17-12:00:00', end_at: '2024-10-17-13:00:00', capacity: 50, url: 'https://example.com/example', lesson:)
+    create(:lesson_date, start_at: '2025-10-17-12:00:00', end_at: '2025-10-17-13:00:00', capacity: 50, url: 'https://example.com/example', lesson:)
     visit admins_root_path
     within(".test_#{lesson.id}") do
       click_on 'レッスン開催日一覧'
     end
-    expect(page).to have_content '2024/10/17 12:00'
-    expect(page).to have_content '2024/10/17 13:00'
+    expect(page).to have_content '2025/10/17 12:00'
+    expect(page).to have_content '2025/10/17 13:00'
     expect(page).to have_content '50'
     expect(page).to have_content 'https://example.com/example'
   end
@@ -44,7 +44,7 @@ RSpec.describe 'Admins::Lessons::LessonDates', type: :system do
   end
 
   it 'レッスン開催日を編集できること' do
-    create(:lesson_date, start_at: '2024-10-17-12:00:00', end_at: '2024-10-17-13:00:00', capacity: 50, url: 'https://example.com/example', lesson:)
+    create(:lesson_date, start_at: '2025-10-17-12:00:00', end_at: '2025-10-17-13:00:00', capacity: 50, url: 'https://example.com/example', lesson:)
     visit admins_lesson_lesson_dates_path(lesson)
     click_on '編集'
 
@@ -71,7 +71,7 @@ RSpec.describe 'Admins::Lessons::LessonDates', type: :system do
   end
 
   it 'レッスン開催日を削除できること' do
-    create(:lesson_date, start_at: '2024-10-17-12:00:00', end_at: '2024-10-17-13:00:00', capacity: 50, url: 'https://example.com/example', lesson:)
+    create(:lesson_date, start_at: '2025-10-17-12:00:00', end_at: '2025-10-17-13:00:00', capacity: 50, url: 'https://example.com/example', lesson:)
     visit admins_lesson_lesson_dates_path(lesson)
     expect(page).to have_content 'https://example.com/example'
     expect do

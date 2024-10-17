@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Lessons::LessonDates::Reservations', type: :system do
   let!(:hakjae) { create(:user) }
   let!(:lesson) { create(:lesson, published: true, title: 'そろばん') }
-  let!(:lesson_date) { create(:lesson_date, lesson:, start_at: '2024-10-17-12:00:00', end_at: '2024-10-17-13:00:00') }
+  let!(:lesson_date) { create(:lesson_date, lesson:, start_at: '2025-10-17-12:00:00', end_at: '2025-10-17-13:00:00') }
 
   context 'ログイン時' do
     before do
@@ -22,7 +22,7 @@ RSpec.describe 'Lessons::LessonDates::Reservations', type: :system do
       expect(page).to have_content 'アンケート'
       click_on 'マイページ'
       expect(page).to have_content 'そろばん'
-      expect(page).to have_content '2024/10/17 12:00'
+      expect(page).to have_content '2025/10/17 12:00'
       expect(page).not_to have_link '予約する'
     end
 
@@ -35,10 +35,10 @@ RSpec.describe 'Lessons::LessonDates::Reservations', type: :system do
       expect(page).to have_content '予約をキャンセルしました。'
     end
 
-    it 'すでに開催が開始されたレッスン開催日は表示されないこと' do
+    it 'すでに開催されたレッスン開催日は表示されないこと' do
       lesson_date.update(start_at: '2024/10/15 10:00')
       visit lesson_lesson_dates_path(lesson)
-      expect(page).not_to have_content '2024/10/15 10:00'
+      expect(page).not_to have_content '2025/10/15 10:00'
     end
   end
 
