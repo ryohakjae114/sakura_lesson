@@ -17,6 +17,7 @@ ja:
     show:
       title: "レッスン詳細"
       to_lesson_dates: "このレッスンの開催日時を確認する"
+      to_lessons: "レッスン一覧に戻る"
     lesson_dates:
       index:
         title: "レッスン開催日一覧"
